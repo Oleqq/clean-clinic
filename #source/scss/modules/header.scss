@@ -1,0 +1,396 @@
+// Стили Header 
+.header {
+    
+    &-secondary {
+        padding-top: 50px;
+        @media (max-width:991px) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        @media (max-width:390px) {
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &-primary {
+        padding: 30px 0;
+    }
+
+    &__container {
+
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+
+        & > img {
+            @media (max-width:991px) {
+                width: 226px;
+                height: 52px;
+            }
+            @media (max-width:567px) {
+                
+            }
+            @media (max-width:390px) {
+                width: 107px;
+                height: 25px;
+            }
+        }
+    }
+    
+    &__menu {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        cursor: pointer;
+
+        
+
+        padding: 12px 0 0;
+
+        @media (max-width:991px) {
+            padding: 12px 0 0;
+        }
+        @media (max-width:390px) {
+            gap: 10px;
+            padding: 6px 0 0;
+        }
+        
+
+    }
+}
+
+// Стили бургера 
+.burger-menu {
+    width: 46px;
+    z-index: 9998;
+
+    @media (max-width:420px) {
+        & > svg {
+            width: 32px;
+            height: 13px;
+        }
+    }
+
+    &__title {
+        color: #363636;
+        leading-trim: both;
+        text-edge: cap;
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        transition: .2s ease;
+
+        cursor: pointer;
+
+        &:hover {
+            transition: .2s ease-in;
+            opacity: .6;
+        }
+
+        @media (max-width:991px) {
+            font-size: 16px;
+        }
+        @media (max-width:390px) {
+            font-size: 12px;
+        }
+    }
+}
+
+
+
+/* Стили для меню-оверлея */
+.overlay-menu {
+    // display: none;
+    display: flex;
+    flex-direction: column;
+
+    padding: 40px;
+
+    position: fixed;
+    top: 0;
+    right: -440px; /* Положение справа за пределами экрана */
+    width: 440px;
+    height: 100%;
+    background: rgba(84, 101, 189, 1); // Изменил прозрачность цвета фона
+
+    // backdrop-filter: blur(15px);
+    z-index: 9997;
+    transition: right 0.3s ease-in-out;
+
+    @media (max-width:991px) {
+        width: 355px;
+        padding: 30px 0 30px 30px;
+    }
+
+    @media (max-width:467px) {
+        width: 200px;
+        padding: 16px 0 16px 16px;
+    }
+
+    &.active {
+        right: 0; /* Показать меню */
+    }
+
+    // Стили для содержимого меню
+    .menu-content {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        margin-top: 50px;
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            color: var(--ebeef-3, #F5F5F5);
+            leading-trim: both;
+            text-edge: cap;
+            font-family: 'Montserrat';
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+
+            @media (max-width:991px) {
+                
+            }
+            @media (max-height:500px) {
+                margin-bottom: 0;
+            }
+            @media (max-width:467px) {
+                font-size: 14px;
+            }
+
+            li {
+                margin-bottom: 20px;
+                transition: .2s ease;
+                width: fit-content;
+                
+                &:hover {
+                    transition: .2s ease;
+                    scale: 1.125;
+    
+                }
+                
+                @media (max-height:650px) {
+                    margin-bottom: 10px;
+                    
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #F5F5F5;
+                }
+            }
+        }
+
+        &__bottom {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+
+            flex: 1;
+            justify-content: flex-end;
+
+            color: var(--ebeef-3, #F5F5F5);
+            leading-trim: both;
+            text-edge: cap;
+            font-family: 'Montserrat';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            
+
+            // Стили для блоков в нижней части меню
+            & > .menu-content__block {
+                
+                margin-bottom: 30px;
+                
+                @media (max-height:650px) {
+                    margin-bottom: 5px;
+                }
+
+                a {
+                    text-decoration: none;
+                    
+                    display: block;
+                    
+                    color: var(--ebeef-3, #F5F5F5);
+                    leading-trim: both;
+                    text-edge: cap;
+                    font-family: 'Montserrat';
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    text-transform: uppercase;
+
+                    @media (max-width:991px) {
+                        font-size: 16px;
+                    }
+                    @media (max-width:567px) {
+                        font-size: 12px;
+                    }
+                    
+                }
+
+                p {
+                   margin-bottom: 0 !important;
+                   @media (max-width:991px) {
+                    font-size: 16px;
+                }
+                @media (max-width:567px) {
+                    font-size: 12px;
+                }
+                }
+            }
+        }
+
+        &__socials {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            margin-bottom: 120px;
+            transition: .2s ease;
+
+            @media (max-width:991px) {
+                gap: 24px;
+                margin-bottom: 80px;
+            }
+            @media (max-height:700px) {
+                margin-bottom: 30px;
+
+            }
+            @media (max-height:650px) {
+                margin-bottom: 10px;
+                margin-top: 5px;
+            }
+            @media (max-width:567px) {
+                gap: 12px;
+            }
+
+            @media (max-width:467px) {
+                gap: 0;
+            }
+
+            & > a > svg {
+                transition: .2s ease;
+    
+                @media (max-width:467px) {
+                    width: 40px;
+                    height: 30px;
+                }
+            }
+    
+            & > a:hover {
+                svg {
+                    transition: .2s ease;
+                    transform: scale(1.2);
+                }
+            }
+
+            a {
+                display: block;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: 10px;
+
+                @media (max-width:467px) {
+                    width: 40px;
+                    height: 30px;
+                }
+
+                
+            }
+        }
+
+        &__logo {
+            
+
+            img {
+                max-width: 100%;
+                height: auto;
+
+                @media (max-width:467px) {
+                    width: 107.205px;
+                    height: 24.667px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// Стили хлебных крошек
+.breadcrumbs {
+    &__item {
+
+    }
+    &__link {
+
+    }
+    &__divider {
+
+    }
+
+    &__prev {
+        color: #363636;
+        leading-trim: both;
+        text-edge: cap;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        @media (max-width:991px) {
+            font-size: 14px;
+        }
+        @media (max-width:390px) {
+            font-size: 12px;
+        }
+    }
+    &__current {
+        color: #5465BD;
+        leading-trim: both;
+        text-edge: cap;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        @media (max-width:991px) {
+            font-size: 14px;
+        }
+        @media (max-width:390px) {
+            font-size: 12px;
+        }
+    }
+}
+.breadcrumb {
+    gap: 6px;
+    margin: 40px 0 80px 0;
+
+    @media (max-width:991px) {
+        margin: 30px 0 50px 0;
+    }
+    @media (max-width:390px) {
+        margin: 20px 0 40px 0;
+    }
+}
